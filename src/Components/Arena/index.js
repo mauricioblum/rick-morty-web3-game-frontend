@@ -120,7 +120,7 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
 
   return (
     <div className="arena-container">
-      {boss && (
+      {showToast && (
         <div id="toast" className="show">
           <div id="desc">{`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}</div>
         </div>
@@ -131,7 +131,7 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
           <div className={`boss-content ${attackState}`}>
             <h2>🔥 {boss.name} 🔥</h2>
             <div className="image-content">
-              <img src={boss.imageURI} alt={`Boss ${boss.name}`} />
+              <img src={`https://cloudflare-ipfs.com/ipfs/${boss.imageURI}`} alt={`Boss ${boss.name}`} />
               <div className="health-bar">
                 <progress value={boss.hp} max={boss.maxHp} />
                 <p>{`${boss.hp} / ${boss.maxHp} HP`}</p>
